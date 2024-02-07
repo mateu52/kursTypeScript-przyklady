@@ -5,18 +5,19 @@
 //wyrzucic smieci
 //pojscie na siłownie
 // nakarmić koty
-const taskNameInputElement: HTMLElement = document.querySelector('#name');
+const taskNameInputElement: HTMLInputElement = document.querySelector('#name');
 const addButtonElement: HTMLButtonElement = document.querySelector('button')
 const tasksContainerElement: HTMLElement = document.querySelector('.tasks');
 
-
-const tasks: {
+interface Task {
     name: string;
-    done: boolean;
-}[] = [
+    done: boolean
+}
+
+const tasks: Task[] = [
     {
-    name: "Wyrzcić śmieci",
-    done: false
+        name: "Wyrzcić śmieci",
+        done: false
     }, {
         name: "Pójść na siłkę",
         done: true
@@ -51,12 +52,13 @@ const render = () => {
         tasksContainerElement.appendChild(taskElement);
     })
 }
-const addTask = (taskName: string) => {
-    tasks.push({name: taskName, done: false});
+const addTask = (task: Task) => {
+    tasks.push(task);
 }
 addButtonElement.addEventListener("click", (event: Event) => {
     event.preventDefault();
-    addTask(taskNameInputElement.value);
+    addTask({ name: taskNameInputElement.value , done: false });
     render();
-})
+});
+
 render()
