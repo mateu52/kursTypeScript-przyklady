@@ -24,6 +24,8 @@ const tasks = [
 const addTask = (task) => {
     tasks.push(task);
 };
+const updateSelectedCategory = (newCategory) => {
+};
 addButtonElement.addEventListener("click", (event) => {
     event.preventDefault();
     addTask({ name: taskNameInputElement.value, done: false, category: selectedCategory });
