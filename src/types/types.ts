@@ -3,4 +3,10 @@ export interface Task {
     done: boolean;
     category?: Category;
 }
-export type Category = "general" | "work" | "gym" | "hobby";
+export enum Category {
+    GENERAL = 'general',
+    WORK = 'work',
+    GYM = 'gym',
+    HOBBY = 'hobby',
+    //domyslnie przybierają wartości od 0..1,2,3..
+}

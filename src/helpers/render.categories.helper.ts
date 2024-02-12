@@ -1,13 +1,13 @@
-import { Category } from "../types/types";
+import { Category } from "../types/types.js";
 
 const handleCategoryChange = (category: Category) => {
-    if ( category === "general"){
+    if ( category === Category.GENERAL){
         console.log("zmiana na general")
-    }else if( category === "gym"){
+    }else if( category === Category.GYM){
         alert("Lecisz na silke!")
-    }else if ( category === "work"){
+    }else if ( category === Category.WORK){
         console.log("zmiana na work")
-    }else if ( category === "hobby"){
+    }else if ( category === Category.HOBBY){
         console.log("zmiana na hobby")
     }else {
         const never: never = category;
@@ -44,5 +44,3 @@ export const renderCategories = (
         categoriesContainerElement.appendChild(categoryElement);
     })
 }
-
-const add = (v1: number, v2: number) => v1 + v2;

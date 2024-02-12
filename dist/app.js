@@ -1,3 +1,4 @@
+import { Category } from "./types/types.js";
 import { render } from './helpers/render-tasks.helper.js'; //dodajemy rozszerzenie JS zamiast ts
 import { renderCategories } from "./helpers/render.categories.helper.js";
 const taskNameInputElement = document.querySelector('#name');
@@ -5,7 +6,12 @@ const addButtonElement = document.querySelector('button');
 const tasksContainerElement = document.querySelector('.tasks');
 const categoriesContainerElement = document.querySelector(".categories");
 let selectedCategory;
-const categories = ["general", "work", "gym", "hobby"];
+const categories = [
+    Category.GENERAL,
+    Category.GYM,
+    Category.HOBBY,
+    Category.WORK
+];
 const tasks = [
     {
         name: "Wyrzcić śmieci",
@@ -13,12 +19,12 @@ const tasks = [
     }, {
         name: "Pójść na siłkę",
         done: true,
-        category: "gym"
+        category: Category.GYM
     },
     {
         name: "Nakarmić koty",
         done: false,
-        category: "general"
+        category: Category.GENERAL
     }
 ];
 const addTask = (task) => {

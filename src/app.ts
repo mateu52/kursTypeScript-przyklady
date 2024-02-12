@@ -1,4 +1,4 @@
-import { Task, Category } from "./types/types"
+import { Task, Category } from "./types/types.js"
 import { render } from './helpers/render-tasks.helper.js' //dodajemy rozszerzenie JS zamiast ts
 import { renderCategories } from "./helpers/render.categories.helper.js";
 
@@ -8,7 +8,12 @@ const tasksContainerElement: HTMLElement = document.querySelector('.tasks');
 const categoriesContainerElement: HTMLElement = document.querySelector(".categories");
 let selectedCategory: Category;
 
-const categories: Category[] = ["general", "work", "gym", "hobby"];
+const categories: Category[] = [
+    Category.GENERAL, 
+    Category.GYM, 
+    Category.HOBBY, 
+    Category.WORK
+];
 
 
 const tasks: Task[] = [
@@ -18,12 +23,12 @@ const tasks: Task[] = [
     }, {
         name: "Pójść na siłkę",
         done: true,
-        category: "gym"
+        category: Category.GYM
     },
     {
         name: "Nakarmić koty",
         done: false,
-        category: "general"
+        category: Category.GENERAL
     }
 ];
 

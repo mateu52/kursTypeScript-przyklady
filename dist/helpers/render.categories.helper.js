@@ -1,14 +1,15 @@
+import { Category } from "../types/types.js";
 const handleCategoryChange = (category) => {
-    if (category === "general") {
+    if (category === Category.GENERAL) {
         console.log("zmiana na general");
     }
-    else if (category === "gym") {
+    else if (category === Category.GYM) {
         alert("Lecisz na silke!");
     }
-    else if (category === "work") {
+    else if (category === Category.WORK) {
         console.log("zmiana na work");
     }
-    else if (category === "hobby") {
+    else if (category === Category.HOBBY) {
         console.log("zmiana na hobby");
     }
     else {
@@ -37,4 +38,3 @@ export const renderCategories = (categories, categoriesContainerElement, inputCh
         categoriesContainerElement.appendChild(categoryElement);
     });
 };
-const add = (v1, v2) => v1 + v2;
