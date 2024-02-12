@@ -41,5 +41,5 @@ addButtonElement.addEventListener("click", (event: Event) => {
     render(tasks, tasksContainerElement);
 });
 
-renderCategories(categories, categoriesContainerElement, selectedCategory)
+renderCategories(categories, categoriesContainerElement, updateSelectedCategory)
 render(tasks, tasksContainerElement)

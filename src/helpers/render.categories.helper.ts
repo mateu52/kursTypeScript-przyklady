@@ -1,6 +1,23 @@
 import { Category } from "../types/types";
 
-export const renderCategories = (categories: Category[], 
+const handleCategoryChange = (category: Category) => {
+    if ( category === "general"){
+        console.log("zmiana na general")
+    }else if( category === "gym"){
+        alert("Lecisz na silke!")
+    }else if ( category === "work"){
+        console.log("zmiana na work")
+    }else if ( category === "hobby"){
+        console.log("zmiana na hobby")
+    }else {
+        const never: never = category;
+        //mozna przypisac 'never' pod 'category' poniewaz nigdy nie bedzie uzyty
+        //uzylismy wyzej wszystkie możliwe warunki wykonania
+    }
+}
+
+export const renderCategories = (
+    categories: Category[], 
     categoriesContainerElement: HTMLElement, 
     inputChangeCallback: (category: Category) => void
     ) => {
@@ -14,6 +31,7 @@ export const renderCategories = (categories: Category[],
         radioInputElement.id = `category-${category}`;
         radioInputElement.addEventListener("change", () => {
             inputChangeCallback(category);
+            handleCategoryChange(category);
         })
 
         const labelElement: HTMLLabelElement = document.createElement("label")
