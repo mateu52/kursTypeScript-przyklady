@@ -47,4 +47,16 @@ addButtonElement.addEventListener("click", (event: Event) => {
 });
 
 renderCategories(categories, categoriesContainerElement, updateSelectedCategory)
-render(tasks, tasksContainerElement)
+render(tasks, tasksContainerElement);
+
+type TaskAsTuple = [string, Category, boolean];
+const task1: TaskAsTuple = [ // 1 opcja ( muśi być zachowana kolejność w tablicy)
+    "zrobić klatkę",
+    Category.GYM,
+    false,
+]
+const task: [string, Category, boolean] = [ // 2 opcja
+    "zrobić klatkę",
+    Category.GYM,
+    false,
+]
